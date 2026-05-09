@@ -1,0 +1,22 @@
+{
+  "subject": "IOT",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "General Topics",
+      "questions": [
+        "What is the Internet of Things (IoT) and what are its core characteristics?",
+        "How do First Angle and Third Angle projection differ in engineering drawings?",
+        "What are the primary differences between the MQTT and CoAP messaging protocols?",
+        "Describe the architecture and key features of the Arduino Uno.",
+        "What is Fog Computing and how does it differ from Cloud Computing?",
+        "Explain the significance of the IPv6 protocol in the context of IoT.",
+        "What are the common security challenges faced in IoT implementations?",
+        "Differentiate between a Microprocessor and a Microcontroller.",
+        "What is Bluetooth Low Energy (BLE) and what are its components?",
+        "How are sensors and actuators used in a smart home environment?"
+      ]
+    }
+  ]
+}

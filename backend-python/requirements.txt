@@ -1,0 +1,6 @@
+python-dotenv
+fastapi
+uvicorn
+groq
+pydantic
+sqlite3

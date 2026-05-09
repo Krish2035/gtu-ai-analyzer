@@ -1,0 +1,18 @@
+{
+  "subject": "Basic Electrical Engineering",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "General Topics",
+      "questions": [
+        "State and explain Kirchhoff's Laws.",
+        "Define RMS Value and Form Factor.",
+        "What is the difference between a core-type and shell-type transformer?",
+        "Why is power factor improvement necessary?",
+        "Explain the significance of back EMF in a DC motor.",
+        "Compare MCB and Fuse."
+      ]
+    }
+  ]
+}

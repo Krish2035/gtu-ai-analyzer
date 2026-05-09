@@ -1,0 +1,22 @@
+{
+  "subject": "EGD",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "General Topics",
+      "questions": [
+        "What is Representative Fraction (RF) and how is it calculated?",
+        "What are the primary differences between First Angle and Third Angle projection methods?",
+        "Explain the difference between Aligned and Unidirectional dimensioning systems.",
+        "Define the following engineering curves: Ellipse, Parabola, and Hyperbola based on eccentricity.",
+        "What are common AutoCAD commands used in engineering drawing?",
+        "Differentiate between a Prism and a Pyramid.",
+        "What is the difference between an Involute and a Cycloid?",
+        "What are the benefits of using Computer-Aided Design (CAD) over conventional drawing?",
+        "Define 'True Shape' versus 'Apparent Shape' of a section.",
+        "What is an Isometric Scale and why is it used?"
+      ]
+    }
+  ]
+}

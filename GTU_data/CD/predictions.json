@@ -1,0 +1,49 @@
+{
+  "subject": "Compiler Design",
+  "subject_code": "3170701",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Phases of Compiler",
+      "questions": [
+        "Explain different phases of a compiler with a suitable example (e.g., a = b + c * 60)."
+      ]
+    },
+    {
+      "category": "Parsing",
+      "questions": [
+        "Construct the LL(1) parsing table for a given grammar and explain the significance of First and Follow sets."
+      ]
+    },
+    {
+      "category": "Grammar Transformation",
+      "questions": [
+        "What is Left Recursion and Left Factoring? Explain how to eliminate them with examples."
+      ]
+    },
+    {
+      "category": "Intermediate Code",
+      "questions": [
+        "Translate the given arithmetic expression into Quadruples, Triples, and Indirect Triples."
+      ]
+    },
+    {
+      "category": "Optimization",
+      "questions": [
+        "Explain Peephole optimization and list various code optimization techniques like dead code elimination and constant folding."
+      ]
+    },
+    {
+      "category": "Run-time Environment",
+      "questions": [
+        "Discuss Activation Records and compare different storage allocation strategies (Static vs. Dynamic)."
+      ]
+    },
+    {
+      "category": "Lexical Analysis",
+      "questions": [
+        "Define Token, Lexeme, and Pattern. Explain the role of the Lexical Analyzer and Input Buffering techniques."
+      ]
+    }
+  ]
+}

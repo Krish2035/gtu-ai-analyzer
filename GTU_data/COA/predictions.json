@@ -1,0 +1,61 @@
+{
+  "subject": "Computer Organization & Architecture",
+  "subject_code": "3140707",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Assembler",
+      "questions": [
+        "Draw and explain the flowchart for the first pass and second pass of an assembler."
+      ]
+    },
+    {
+      "category": "Instruction Cycle",
+      "questions": [
+        "Explain the instruction cycle (Fetch, Decode, Execute) with a detailed flowchart and RTL statements."
+      ]
+    },
+    {
+      "category": "Arithmetic Algorithms",
+      "questions": [
+        "Explain Booth's multiplication algorithm with a flowchart and provide a numerical example."
+      ]
+    },
+    {
+      "category": "Addressing Modes",
+      "questions": [
+        "List and explain at least five different types of addressing modes with suitable examples."
+      ]
+    },
+    {
+      "category": "Pipelining",
+      "questions": [
+        "What is pipelining? Explain various types of pipeline conflicts (Resource, Data, Branch) in detail."
+      ]
+    },
+    {
+      "category": "Memory Organization",
+      "questions": [
+        "Discuss cache memory mapping techniques: Direct mapping, Associative mapping, and Set-associative mapping."
+      ]
+    },
+    {
+      "category": "Control Unit",
+      "questions": [
+        "Differentiate between Hardwired control and Microprogrammed control units."
+      ]
+    },
+    {
+      "category": "I/O Organization",
+      "questions": [
+        "Explain the working of Direct Memory Access (DMA) and the role of a DMA controller."
+      ]
+    },
+    {
+      "category": "Architecture Types",
+      "questions": [
+        "Compare and contrast RISC and CISC architectures."
+      ]
+    }
+  ]
+}

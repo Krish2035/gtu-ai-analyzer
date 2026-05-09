@@ -1,0 +1,55 @@
+{
+  "subject": "Theory of Computation",
+  "subject_code": "3160704",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Mathematical Foundations",
+      "questions": [
+        "Define and differentiate between one-to-one, onto, and bijection functions.",
+        "State and explain the Principle of Mathematical Induction with an example (often proving sums or divisibility).",
+        "Define reflexive, symmetric, and transitive relations and determine if a given relation is an equivalence relation."
+      ]
+    },
+    {
+      "category": "Finite Automata & Regular Languages",
+      "questions": [
+        "State and prove Kleene's Theorem (Part-1).",
+        "Explain the procedure to minimize a Finite Automata (FA).",
+        "Define NFA and DFA and explain the subset construction method to convert NFA to DFA.",
+        "State and prove the Pumping Lemma for regular languages and use it to show a language (like a^n b^n) is non-regular.",
+        "Differentiate between Moore and Mealy machines and explain the conversion process between them."
+      ]
+    },
+    {
+      "category": "Context-Free Grammars & PDA",
+      "questions": [
+        "Define Context-Free Grammar (CFG) and Context-Free Language (CFL).",
+        "Explain Ambiguous grammar and show how to check if a grammar is ambiguous using derivation trees.",
+        "Define Chomsky Normal Form (CNF) and provide the step-by-step procedure to convert a CFG to CNF.",
+        "Define Pushdown Automata (PDA) and explain its 7-tuple definition.",
+        "State the Pumping Lemma for Context-Free Languages.",
+        "Compare Deterministic PDA (DPDA) and Non-deterministic PDA (NPDA)."
+      ]
+    },
+    {
+      "category": "Turing Machines & Computability",
+      "questions": [
+        "Define a Turing Machine (TM) and explain its 7-tuple definition and capabilities.",
+        "Explain the Church-Turing Thesis and its significance.",
+        "Discuss the Universal Turing Machine (UTM).",
+        "Explain the Halting Problem and why it is undecidable.",
+        "Differentiate between Recursive and Recursively Enumerable languages."
+      ]
+    },
+    {
+      "category": "Complexity & Recursive Functions",
+      "questions": [
+        "Define and explain Primitive Recursive Functions.",
+        "Discuss the differences between Class P and Class NP problems.",
+        "Explain the Chomsky Hierarchy of languages.",
+        "Define Bounded Minimalization and Bounded Quantification."
+      ]
+    }
+  ]
+}

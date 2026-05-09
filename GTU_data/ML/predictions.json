@@ -1,0 +1,22 @@
+{
+  "subject": "ML",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "General Topics",
+      "questions": [
+        "What is a well-posed learning problem?",
+        "What are the different types of machine learning?",
+        "How can outliers in data be handled?",
+        "What is the difference between supervised and unsupervised learning?",
+        "What is reinforcement learning and its key features?",
+        "What are overfitting and underfitting?",
+        "What is the K-nearest neighbor (KNN) algorithm?",
+        "What is the purpose of Principal Component Analysis (PCA)?",
+        "What are the common activation functions used in neural networks?",
+        "What is the backpropagation algorithm?"
+      ]
+    }
+  ]
+}

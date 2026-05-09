@@ -1,0 +1,22 @@
+{
+  "subject": "SE",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Common Questions",
+      "questions": [
+        "What is Software Engineering and why is it considered a layered technology?",
+        "Explain the Spiral Model and its advantages.",
+        "What is the difference between Verification and Validation?",
+        "What are Coupling and Cohesion in software design?",
+        "Compare Black-box and White-box testing.",
+        "Define DevOps and explain the 7 Cs of the DevOps lifecycle.",
+        "What is Requirement Engineering and its main tasks?",
+        "Explain the levels of the SEI Capability Maturity Model (CMM).",
+        "What is the Agile Manifesto and what are its key principles?",
+        "Differentiate between Software Reverse Engineering and Re-engineering."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "subject": "Cloud Computing",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "General Topics",
+      "questions": [
+        "Define Cloud Computing and explain its essential characteristics.",
+        "Differentiate between IaaS, PaaS, and SaaS with examples.",
+        "Explain the difference between Type-1 and Type-2 Hypervisors.",
+        "What is Live Virtual Machine Migration? Describe the steps involved.",
+        "Compare Public, Private, Hybrid, and Community cloud deployment models.",
+        "Discuss Identity Management and Access Control (IAM) in cloud computing.",
+        "What is Disaster Recovery in the cloud? How is it implemented?"
+      ]
+    }
+  ]
+}

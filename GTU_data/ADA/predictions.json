@@ -1,0 +1,66 @@
+{
+  "subject": "ADA",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Fundamentals and Complexity Analysis",
+      "questions": [
+        "Define Algorithm and discuss its key characteristics/properties.",
+        "Explain Asymptotic Notations: Big-O, Big-Omega, and Big-Theta with their mathematical inequalities and graphs.",
+        "Explain and compare Worst Case, Best Case, and Average Case complexities with suitable examples.",
+        "State and apply the Master Theorem to solve recurrence relations."
+      ]
+    },
+    {
+      "category": "Sorting and Searching",
+      "questions": [
+        "Write and analyze the Insertion Sort algorithm (including best and worst-case analysis).",
+        "Explain the Quick Sort algorithm, trace it with an example, and discuss its worst-case and best-case time complexity.",
+        "Explain the Merge Sort algorithm and solve its recurrence relation using the Master Theorem or Recurrence Tree.",
+        "Demonstrate the Binary Search method and derive its time complexity."
+      ]
+    },
+    {
+      "category": "Dynamic Programming",
+      "questions": [
+        "What is the Principle of Optimality? Explain its significance in Dynamic Programming.",
+        "Solve the Longest Common Subsequence (LCS) problem for given sequences using Dynamic Programming.",
+        "Explain and solve the Matrix Chain Multiplication problem to find the optimal parenthesization.",
+        "Solve the 0/1 Knapsack problem using the Dynamic Programming approach."
+      ]
+    },
+    {
+      "category": "Greedy Algorithms",
+      "questions": [
+        "Give the characteristics of Greedy Algorithms and differentiate them from Dynamic Programming.",
+        "Explain and find the Minimum Spanning Tree (MST) using Prim\u2019s and Kruskal\u2019s algorithms.",
+        "Explain Huffman Coding and find the optimal Huffman code for a given set of frequencies.",
+        "Solve the Fractional Knapsack problem using the Greedy method."
+      ]
+    },
+    {
+      "category": "Graph Algorithms and Traversal",
+      "questions": [
+        "Explain and differentiate between Breadth First Search (BFS) and Depth First Search (DFS) traversals.",
+        "What is an Articulation Point? Provide an algorithm or example to find it in a graph.",
+        "Explain the concept of Topological Sort and provide an example using a Directed Acyclic Graph (DAG)."
+      ]
+    },
+    {
+      "category": "Backtracking and String Matching",
+      "questions": [
+        "Explain the Backtracking method and provide a solution for the 4-Queens (or N-Queens) problem.",
+        "Explain the Na\u00efve String Matching algorithm and its time complexity.",
+        "Explain the Rabin-Karp string matching algorithm and the concept of 'spurious hits' with a numerical example."
+      ]
+    },
+    {
+      "category": "Complexity Theory",
+      "questions": [
+        "Define and differentiate between P, NP, NP-Complete, and NP-Hard problems.",
+        "Explain Polynomial Time Reduction and its role in proving NP-Completeness."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "subject": "Web Programming",
+  "subject_code": "3160713",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Web Basics & Planning",
+      "questions": [
+        "Explain different design issues and principles at the time of designing an effective website.",
+        "What is HTTP? Explain the browser and server communication using HTTP request and response.",
+        "Differentiate between Client-side scripting and Server-side scripting.",
+        "Differentiate between GET and POST methods."
+      ]
+    },
+    {
+      "category": "HTML & CSS",
+      "questions": [
+        "Explain 'class' and 'id' selectors in CSS with examples.",
+        "Discuss the use of rowspan and colspan attributes in HTML tables.",
+        "List and explain the different types of CSS (Inline, Internal, External).",
+        "Explain the purpose and usage of meta tags in HTML documents.",
+        "Differentiate between HTML and XHTML."
+      ]
+    },
+    {
+      "category": "JavaScript & DOM",
+      "questions": [
+        "What is the Document Object Model (DOM)? Explain its significance.",
+        "Explain JavaScript event handling and provide an example of mouse or button events.",
+        "Describe the different types of popup boxes (Alert, Confirm, Prompt) in JavaScript.",
+        "Explain callbacks and their usage in JavaScript.",
+        "How do you validate form fields (like email or mobile numbers) using Regular Expressions?"
+      ]
+    },
+    {
+      "category": "PHP & Data Management",
+      "questions": [
+        "What are the differences between Cookies and Sessions? Explain with examples.",
+        "Explain the different types of arrays in PHP (Index, Associative, Multidimensional).",
+        "Describe the process of connecting a PHP script to a MySQL database and performing operations like Insert or Select.",
+        "Explain file handling in PHP (open, read, write, and close functions).",
+        "How are prepared statements executed in PHP, and why are they used?"
+      ]
+    },
+    {
+      "category": "Advanced Concepts (AJAX, jQuery, XML)",
+      "questions": [
+        "Differentiate between Synchronous and Asynchronous web programming.",
+        "What is AJAX? Explain the role of the XMLHttpRequest object.",
+        "What is jQuery? Discuss its advantages and basic selectors.",
+        "Define Web Services and the role of SOAP.",
+        "Explain JSON and its methods for converting data to/from JavaScript objects."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "subject": "Basic Mechanical Engineering",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Thermodynamics",
+      "questions": [
+        "State and prove the relationship between specific heats (Cp, Cv) and the Gas Constant (R)."
+      ]
+    },
+    {
+      "category": "Internal Combustion Engines",
+      "questions": [
+        "Define Compression Ratio in the context of IC engines."
+      ]
+    },
+    {
+      "category": "Boilers",
+      "questions": [
+        "What is the difference between boiler mountings and accessories?"
+      ]
+    },
+    {
+      "category": "Pumps",
+      "questions": [
+        "What is priming and why is it necessary in centrifugal pumps?"
+      ]
+    },
+    {
+      "category": "Power Transmission",
+      "questions": [
+        "Compare Belt, Chain, and Gear drives."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "subject": "AI",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Fundamentals and Problem Solving",
+      "questions": [
+        "Define Artificial Intelligence and discuss its major task domains and applications.[cite: 11, 12, 13, 15, 16, 18]",
+        "Explain the Turing Test for AI.[cite: 12, 16]",
+        "What is a State Space Search? Explain using the Water Jug problem (5/4 liter or 4/3 liter variations).[cite: 11, 12, 13, 15, 17, 19]",
+        "Describe AI Problem Characteristics in detail.[cite: 13, 16, 18, 19]",
+        "Discuss different Control Strategies and the requirements for a good control strategy.[cite: 13, 15, 18, 19]"
+      ]
+    },
+    {
+      "category": "Search Techniques",
+      "questions": [
+        "Explain the Best First Search algorithm with an example.[cite: 11, 12, 15, 18]",
+        "Describe the A* Algorithm and its stages. Discuss what happens if the heuristic underestimates or overestimates.[cite: 14, 15, 17, 18, 19]",
+        "Explain Hill Climbing (Simple and Steepest Ascent) and its limitations (Local Maxima, Plateau, Ridge).[cite: 11, 12, 13, 14, 15, 16, 17]",
+        "Solve a Cryptarithmetic problem (e.g., SEND+MORE=MONEY or BEST+MADE=MASER) using Constraint Satisfaction.[cite: 13, 14, 16, 17, 19]"
+      ]
+    },
+    {
+      "category": "Knowledge Representation and Logic",
+      "questions": [
+        "Differentiate between Declarative and Procedural knowledge.[cite: 13, 16, 17, 18, 19]",
+        "Explain Forward Reasoning vs. Backward Reasoning with examples.[cite: 11, 13, 14, 15, 16, 17]",
+        "Translate English sentences into Predicate Logic and use Resolution to answer specific questions.[cite: 11, 12, 13, 14, 15, 19]",
+        "Explain Unification and the steps to convert a formula into Clause Form.[cite: 12, 14, 15, 17, 19]",
+        "Define Non-monotonic Reasoning and discuss its characteristics or logics.[cite: 12, 13, 14, 15, 16, 17, 19]",
+        "Explain Semantic Nets and Frames with suitable examples.[cite: 11, 12, 18]"
+      ]
+    },
+    {
+      "category": "Game Playing and Planning",
+      "questions": [
+        "Explain the MiniMax Search procedure for game playing.[cite: 11, 13, 14, 15, 16, 18, 19]",
+        "Demonstrate the use of Alpha-Beta Pruning/Cut-offs to improve MiniMax performance.[cite: 11, 12, 16, 17, 19]",
+        "Discuss Goal Stack Planning in brief.[cite: 13, 14, 15]",
+        "Explain the components of a Planning System and how planning differs from search.[cite: 11, 16, 18]"
+      ]
+    },
+    {
+      "category": "Uncertainty, Neural Networks, and GA",
+      "questions": [
+        "State Bayes' Theorem and explain how Bayesian Networks represent causality.[cite: 12, 14, 15, 16, 17, 18, 19]",
+        "Explain Artificial Neural Networks (ANN), Perceptrons, and the Backpropagation algorithm.[cite: 11, 14, 15, 16, 17, 18]",
+        "Describe Hopfield Networks.[cite: 12, 13, 14, 18, 19]",
+        "Discuss the phases and operators (Selection, Crossover, Mutation) of Genetic Algorithms.[cite: 11, 12, 14, 15, 16, 17, 18, 19]"
+      ]
+    },
+    {
+      "category": "NLP and Expert Systems",
+      "questions": [
+        "Enlist and describe the different phases of Natural Language Processing (Morphological, Syntactic, Semantic, etc.).[cite: 11, 12, 13, 14, 15, 16, 17, 19]",
+        "Draw and explain the architecture of an Expert System.[cite: 11, 14, 16, 17]",
+        "Explain Expert System Shells.[cite: 11, 12]"
+      ]
+    },
+    {
+      "category": "Prolog Programming",
+      "questions": [
+        "Explain the 'Cut' (!) and 'Fail' predicates in Prolog with examples.[cite: 11, 12, 13, 14, 15, 17, 18, 19]",
+        "Write a Prolog program to perform List operations (Concatenate, Append, Find Min, Length, etc.).[cite: 11, 12, 13, 14, 15, 16, 18, 19]",
+        "Write a Prolog program to find the Factorial of a number.[cite: 16, 19]"
+      ]
+    }
+  ]
+}

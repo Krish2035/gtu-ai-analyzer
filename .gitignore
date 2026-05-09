@@ -1,0 +1,27 @@
+# Environment files
+.env
+.env.local
+
+# Python
+__pycache__/
+*.pyc
+venv/
+backend-python/venv/
+backend-python/lumina.db
+backend-python/uploads/
+backend-python/ai_cache/
+
+# Node
+node_modules/
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Brain/Gemini
+brain/
