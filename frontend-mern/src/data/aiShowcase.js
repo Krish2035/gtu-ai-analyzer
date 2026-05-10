@@ -23,6 +23,21 @@ graph TD
 ---
 **GTU Exam Tip:** Always define the direction of current (clockwise/anti-clockwise) before applying KVL equations!`,
 
+  "Define RMS Value and Form Factor.": `### 📊 RMS Value & Form Factor
+These are critical parameters for alternating current (AC) analysis.
+
+#### Root Mean Square (RMS) Value
+The RMS value of an AC is that value of steady current (DC) which, when flowing through a given resistance for a given time, produces the same amount of heat as produced by the AC.
+*   **Formula:** $I_{rms} = \\frac{I_m}{\\sqrt{2}} \\approx 0.707 \\times I_m$
+
+#### Form Factor
+It is the ratio of the RMS value to the Average value of an alternating quantity.
+*   **Formula:** $k_f = \\frac{RMS \\text{ Value}}{Average \\text{ Value}}$
+*   **For Sine Wave:** $k_f = 1.11$
+
+---
+**High Priority:** Frequently asked in 3-mark questions!`,
+
   "Explain the RSA Algorithm.": `### 🔐 RSA Encryption Algorithm
 RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem that is widely used for secure data transmission.
 

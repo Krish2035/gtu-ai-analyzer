@@ -181,9 +181,9 @@ const SubjectDetails = () => {
     setAiExplanation("");
 
     // 1. Check for pre-generated showcase answer
-    if (aiShowcase[topicName]) {
+    if (aiShowcase[topicName.trim()]) {
       setTimeout(() => {
-        setAiExplanation(aiShowcase[topicName]);
+        setAiExplanation(aiShowcase[topicName.trim()]);
         setIsAiLoading(false);
       }, 800);
       return;
