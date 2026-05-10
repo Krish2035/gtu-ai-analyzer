@@ -1,0 +1,22 @@
+{
+  "subject": "PYTHON",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Common Questions",
+      "questions": [
+        "What are the advantages of Python for Data Science?",
+        "What are the stages of the Data Science Pipeline?",
+        "How do you handle missing values in a dataset?",
+        "What is the difference between a List and a Tuple in Python?",
+        "What is Exploratory Data Analysis (EDA)?",
+        "Explain the Bag of Words (BoW) model and TF-IDF.",
+        "What are the key components of a Matplotlib graph?",
+        "What is the purpose of Z-score standardization?",
+        "How do covariance and correlation differ in data analysis?",
+        "What is the role of Scikit-learn in Python?"
+      ]
+    }
+  ]
+}

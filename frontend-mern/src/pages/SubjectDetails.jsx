@@ -158,13 +158,13 @@ const SubjectDetails = () => {
       setLoading(true);
       setError(null);
       try {
-        // Use subject.id (backend folder name) instead of display name
-        const response = await axios.get(`http://localhost:8000/api/static/${subject.id}/predictions.json`);
-        console.log("Subject Data Fetched for:", subject.id, response.data);
+        // Fetch from the local public folder instead of the backend
+        const response = await axios.get(`/GTU_data/${subject.id}/predictions.json`);
+        console.log("Subject Data Fetched Locally for:", subject.id, response.data);
         setFaqAnalysis(response.data.faq_analysis || []);
       } catch (err) {
-        console.error("Fetch Error:", err);
-        setError("Could not load subject data. Ensure the backend is running on port 8000.");
+        console.error("Local Fetch Error:", err);
+        setError("Could not load subject data locally. Please ensure the GTU_data folder is in the public directory.");
       } finally {
         setLoading(false);
       }
@@ -185,7 +185,7 @@ const SubjectDetails = () => {
       });
       setAiExplanation(res.data.explanation);
     } catch (err) {
-      setAiExplanation("### ⚠️ Connection Error\nBackend server not responding. Check your Python terminal for errors.");
+      setAiExplanation("### 🤖 Demo Mode (Offline)\n\nLumina AI is currently in **Offline Demo Mode** because the Python backend is not connected. \n\nTo see AI explanations, you would normally run the `main.py` server locally. On the live site, this feature is limited to pre-generated data.");
     } finally {
       setIsAiLoading(false);
     }

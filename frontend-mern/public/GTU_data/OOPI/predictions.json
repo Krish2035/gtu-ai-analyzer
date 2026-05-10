@@ -1,0 +1,22 @@
+{
+  "subject": "OOPI",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "General Topics",
+      "questions": [
+        "What are the differences between JDK, JRE, and JIT?",
+        "Explain the significance of the 'static' keyword in Java.",
+        "What is inheritance and what are its different types in Java?",
+        "Differentiate between method overloading and method overriding.",
+        "What is an Exception and how is it handled in Java?",
+        "Describe the lifecycle of a Thread in Java.",
+        "What is the difference between an Abstract Class and an Interface?",
+        "Compare ArrayList and LinkedList from the Java Collections Framework.",
+        "Explain the difference between String and StringBuffer classes.",
+        "What are the different access modifiers in Java?"
+      ]
+    }
+  ]
+}

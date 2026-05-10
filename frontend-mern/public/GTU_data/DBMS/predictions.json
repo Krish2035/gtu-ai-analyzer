@@ -1,0 +1,61 @@
+{
+  "subject": "Database Management Systems",
+  "subject_code": "3130703",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Architecture & Data Independence",
+      "questions": [
+        "Explain the three-level architecture of DBMS and differentiate between physical and logical data independence."
+      ]
+    },
+    {
+      "category": "Transaction Management",
+      "questions": [
+        "Define a transaction. List and explain the ACID properties with suitable examples."
+      ]
+    },
+    {
+      "category": "Normalization",
+      "questions": [
+        "What is normalization? Explain 1NF, 2NF, and 3NF with suitable examples and identify their importance in reducing redundancy."
+      ]
+    },
+    {
+      "category": "Query Processing",
+      "questions": [
+        "Discuss the various steps involved in query processing with a neat diagram."
+      ]
+    },
+    {
+      "category": "Entity-Relationship Model",
+      "questions": [
+        "Explain the concepts of Specialization, Generalization, and Aggregation in E-R diagrams with examples."
+      ]
+    },
+    {
+      "category": "Concurrency Control",
+      "questions": [
+        "What is the two-phase locking (2PL) protocol? How does it ensure serializability?"
+      ]
+    },
+    {
+      "category": "Indexing",
+      "questions": [
+        "Differentiate between Sparse and Dense indexing. Explain how B-trees are used for indexing."
+      ]
+    },
+    {
+      "category": "SQL & PL/SQL",
+      "questions": [
+        "What is a Trigger? Explain different types of triggers with their syntax. Also, define the role of Cursors."
+      ]
+    },
+    {
+      "category": "Database Security",
+      "questions": [
+        "Write a short note on SQL injection and how to prevent it."
+      ]
+    }
+  ]
+}

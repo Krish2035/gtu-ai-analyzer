@@ -1,0 +1,67 @@
+{
+  "subject": "Digital Fundamentals",
+  "subject_code": "3130704",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Logic Gates & Theorems",
+      "questions": [
+        "State and prove De-Morgan's theorems using truth tables. Also, prove that NAND and NOR gates are universal gates."
+      ]
+    },
+    {
+      "category": "Boolean Minimization",
+      "questions": [
+        "Minimize a given Boolean function using K-map (typically 4-variable) and realize it using only NAND or NOR gates."
+      ]
+    },
+    {
+      "category": "Flip-Flops",
+      "questions": [
+        "Explain the Race Around Condition in JK Flip-Flop. How is it solved using a Master-Slave JK Flip-Flop? Draw the logic diagram and timing diagram."
+      ]
+    },
+    {
+      "category": "Combinational Design",
+      "questions": [
+        "Design a Full Adder circuit using (a) basic logic gates or (b) a 3-to-8 line decoder and OR gates."
+      ]
+    },
+    {
+      "category": "Data Converters",
+      "questions": [
+        "Explain the working of a Successive Approximation type A/D converter with a neat block diagram."
+      ]
+    },
+    {
+      "category": "Registers & Counters",
+      "questions": [
+        "Differentiate between Synchronous and Asynchronous counters. Design a 3-bit/4-bit synchronous up/down counter."
+      ]
+    },
+    {
+      "category": "Memory Devices",
+      "questions": [
+        "Compare SRAM and DRAM. Also, list and explain the various types of ROM (PROM, EPROM, EEPROM)."
+      ]
+    },
+    {
+      "category": "Arithmetic Circuits",
+      "questions": [
+        "Explain the working of a 4-bit Parallel Binary Adder and a Look-ahead Carry generator."
+      ]
+    },
+    {
+      "category": "Programmable Logic",
+      "questions": [
+        "What is PLA? Implement a combinational circuit with multiple functions using a Programmable Logic Array."
+      ]
+    },
+    {
+      "category": "Number Systems",
+      "questions": [
+        "Perform binary subtraction using 2's complement method and convert numbers between Decimal, Binary, Octal, and Hexadecimal."
+      ]
+    }
+  ]
+}

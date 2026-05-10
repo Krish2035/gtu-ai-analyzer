@@ -1,0 +1,22 @@
+{
+  "subject": "IS",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "General Topics",
+      "questions": [
+        "What are the primary principles of Information Security?",
+        "What is the difference between Symmetric and Asymmetric key cryptography?",
+        "How does the DES algorithm work and is it considered secure?",
+        "Explain the RSA algorithm's key generation process.",
+        "What is the purpose of a Hash Function in security?",
+        "What are the common block cipher modes of operation?",
+        "How does the Diffie-Hellman algorithm facilitate secure communication?",
+        "What is Kerberos and how does it provide authentication?",
+        "Differentiate between Passive and Active security attacks.",
+        "What is a Digital Signature and which algorithms are used for it?"
+      ]
+    }
+  ]
+}

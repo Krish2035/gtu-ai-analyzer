@@ -1,0 +1,22 @@
+{
+  "subject": "PHYSICS",
+  "subject_code": "3110018",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "General Topics",
+      "questions": [
+        "How does the Kronig-Penney model explain the origin of energy bands in solids?",
+        "What are the primary differences between Type-I and Type-II superconductors?",
+        "Explain the working principle of a Photovoltaic (Solar) Cell.",
+        "What is the Meissner Effect in superconductivity?",
+        "How do you distinguish between n-type and p-type semiconductors using the Hot Point Probe method?",
+        "Define Fermi level and discuss its dependence on temperature for an intrinsic semiconductor.",
+        "Explain the difference between Direct and Indirect band gap semiconductors.",
+        "What are Einstein's coefficients and what is the relation between them?",
+        "What is the significance of the Hall Effect?",
+        "Describe the Four-Point Probe method for resistivity measurement."
+      ]
+    }
+  ]
+}

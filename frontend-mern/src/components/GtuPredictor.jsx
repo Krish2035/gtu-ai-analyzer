@@ -92,7 +92,8 @@ const GtuPredictor = () => {
           setStudyActivity(actRes.data.activities);
         }
       } catch (err) {
-        console.error("Failed to load user data in predictor", err);
+        console.warn("Auth server offline. Using guest profile.");
+        setUser({ name: "Guest User", role: "Demo Access • Guest", profile_photo: null });
       }
     };
     fetchUserAndData();
@@ -187,8 +188,8 @@ const GtuPredictor = () => {
     setTopicSearch('');
     
     try {
-      // Use sub.id for folder name
-      const response = await axios.get(`http://localhost:8000/api/static/${sub.id}/predictions.json`);
+      // Fetch from local public folder
+      const response = await axios.get(`/GTU_data/${sub.id}/predictions.json`);
       
       // ✅ Unified: Flatten categories into a single list for the simple dashboard view
       const faqAnalysis = response.data.faq_analysis || [];
@@ -222,12 +223,7 @@ const GtuPredictor = () => {
       });
       setAiExplanation(res.data.explanation);
     } catch (err) {
-      // ✅ FIX: Detect 429 Quota errors specifically
-      if (err.response && err.response.status === 429) {
-        setAiExplanation("### ⏳ Rate Limit Reached\nGroq AI rate limit has been reached. Please wait a few seconds and try again.");
-      } else {
-        setAiExplanation("### ⚠️ Connection Error\nCould not connect to the backend. Ensure your Python server is running on port 8000.");
-      }
+      setAiExplanation("### 🤖 Demo Mode (Offline)\n\nLumina AI is currently in **Offline Demo Mode** because the Python backend is not connected. \n\nTo see AI explanations, you would normally run the `main.py` server locally. On the live site, this feature is limited to pre-generated data.");
     } finally {
       setIsAiLoading(false);
     }

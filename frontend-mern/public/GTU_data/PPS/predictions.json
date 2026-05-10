@@ -1,0 +1,22 @@
+{
+  "subject": "PPS",
+  "subject_code": "3110003",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "General Topics",
+      "questions": [
+        "What is the difference between Entry Control and Exit Control loops in C?",
+        "Explain the difference between 'Call by Value' and 'Call by Reference'.",
+        "How do 'malloc()' and 'calloc()' differ in dynamic memory allocation?",
+        "What are the differences between a Structure and a Union?",
+        "What is recursion and what are its advantages?",
+        "Explain the purpose of 'break' and 'continue' statements.",
+        "What are the common string handling functions in C?",
+        "Define 'Algorithm' and 'Flowchart'.",
+        "How is a pointer initialized in C?",
+        "What are the basic components of a computer system as per the block diagram?"
+      ]
+    }
+  ]
+}

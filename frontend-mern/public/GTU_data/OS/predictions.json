@@ -1,0 +1,22 @@
+{
+  "subject": "OS",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "General Topics",
+      "questions": [
+        "What is an Operating System and what are its main functions?",
+        "Differentiate between a Process and a Thread.",
+        "Explain the different states of a process.",
+        "What is a Deadlock and what are the necessary conditions for it to occur?",
+        "Explain the difference between Paging and Segmentation.",
+        "What is the difference between Internal and External Fragmentation?",
+        "Describe the Producer-Consumer problem and its solutions.",
+        "What are the different Disk Scheduling algorithms?",
+        "Explain the concept of Virtual Memory and Page Faults.",
+        "What is RAID and what are its common levels?"
+      ]
+    }
+  ]
+}

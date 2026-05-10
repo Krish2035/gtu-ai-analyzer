@@ -1,0 +1,72 @@
+{
+  "subject": "AJP",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "JDBC (Java Database Connectivity)",
+      "questions": [
+        "Explain the four types of JDBC drivers and compare them.[cite: 20, 22, 23, 25, 27, 28]",
+        "Compare Statement, PreparedStatement, and CallableStatement with examples.[cite: 20, 22, 24, 25, 26, 28]",
+        "Discuss the use of execute(), executeUpdate(), and executeQuery() methods.[cite: 23, 24]",
+        "What is JDBC? Explain the steps to make a database connection using JDBC code.[cite: 22, 23, 25]"
+      ]
+    },
+    {
+      "category": "Network Programming",
+      "questions": [
+        "Compare Socket with ServerSocket.[cite: 20, 21, 23]",
+        "Differentiate between TCP (Connection-oriented) and UDP (Datagram) sockets.[cite: 25, 27]",
+        "Explain the use of InetAddress, URL, and URLConnection classes.[cite: 22, 23, 24, 25, 27, 28]",
+        "Write a client-server program (TCP/UDP) for tasks like echoing messages, reversing strings, or calculating sums.[cite: 20, 22, 24, 25, 26, 28]"
+      ]
+    },
+    {
+      "category": "Servlets and Session Management",
+      "questions": [
+        "Explain the Servlet life cycle methods in detail.[cite: 20, 22, 23, 24, 28]",
+        "Differentiate between ServletConfig and ServletContext.[cite: 21, 22, 24, 25, 28]",
+        "What is RequestDispatcher? Explain the difference between forward() and include() methods.[cite: 20, 21, 22, 23, 24, 27]",
+        "Define Session Tracking and discuss various techniques (Cookies, Hidden Form Fields, URL Rewriting, HttpSession).[cite: 20, 21, 22, 23, 25, 26, 27, 28]",
+        "What is a Filter? Explain its lifecycle and configuration in the deployment descriptor (web.xml).[cite: 20, 21, 22, 23, 25, 26, 27]"
+      ]
+    },
+    {
+      "category": "JSP (JavaServer Pages)",
+      "questions": [
+        "Discuss the various stages of the JSP life cycle.[cite: 20, 22, 23, 28]",
+        "List and explain JSP implicit (inbuilt) objects.[cite: 20, 23, 24, 25, 27]",
+        "Explain JSP directive tags (page, include, taglib) with examples.[cite: 23, 24, 25]",
+        "What are JSP Action Tags? Explain <jsp:useBean>, <jsp:setProperty>, and <jsp:getProperty>.[cite: 20, 21, 23, 25, 26, 27, 28]",
+        "Compare JSP and Servlet.[cite: 22, 23, 26]"
+      ]
+    },
+    {
+      "category": "JSF (JavaServer Faces) and JSTL",
+      "questions": [
+        "Explain the JSF request processing life cycle phases.[cite: 20, 21, 22, 24, 26]",
+        "What is JSTL? Explain core tags and SQL tag library tags.[cite: 20, 21, 22, 25, 26, 27]",
+        "Discuss JSF features, facelets, and standard validator/converter tags.[cite: 20, 22, 23, 24, 26, 27, 28]",
+        "Explain Expression Language (EL) in JSP/JSF.[cite: 20, 21, 25]"
+      ]
+    },
+    {
+      "category": "Hibernate Framework",
+      "questions": [
+        "What is Hibernate? Discuss its architecture and core components.[cite: 21, 22, 24, 26, 28]",
+        "What is ORM (Object-Relational Mapping)? Explain mapping using hibernate.cfg.xml and mapping files.[cite: 20, 21, 22, 23, 24, 25, 26]",
+        "What is HQL (Hibernate Query Language)? How does it differ from SQL?[cite: 20, 22, 23, 24]",
+        "List the advantages of Hibernate over JDBC.[cite: 23, 26, 27]"
+      ]
+    },
+    {
+      "category": "Spring Framework",
+      "questions": [
+        "Explain the Spring Web MVC architecture and its flow.[cite: 20, 21, 22, 23, 24, 25, 26, 27]",
+        "What is Dependency Injection (DI) and the role of the IoC container?[cite: 21, 22, 24, 25, 27]",
+        "Discuss Spring Bean life cycle and different bean scopes.[cite: 20, 23, 26, 27]",
+        "Explain the concepts of Aspect-Oriented Programming (AOP) in Spring.[cite: 21, 25]"
+      ]
+    }
+  ]
+}

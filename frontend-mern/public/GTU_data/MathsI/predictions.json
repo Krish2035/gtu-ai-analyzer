@@ -1,0 +1,22 @@
+{
+  "subject": "MathsI",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "General Topics",
+      "questions": [
+        "What are the most common limit forms evaluated using L'Hospital's Rule?",
+        "How is the convergence of infinite series typically tested?",
+        "What is the standard procedure for Fourier Series questions?",
+        "What matrix operations are essential for the exam?",
+        "How are Eigenvalues and Eigenvectors used in the context of diagonalization?",
+        "What types of multivariable calculus problems are frequently asked?",
+        "How is the optimization of multivariable functions tested?",
+        "What integration techniques are required for double and triple integrals?",
+        "What are the common applications of Beta and Gamma functions?",
+        "Which power series expansions are mandatory to know?"
+      ]
+    }
+  ]
+}

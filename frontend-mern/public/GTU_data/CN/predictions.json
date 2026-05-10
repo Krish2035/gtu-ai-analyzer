@@ -1,0 +1,61 @@
+{
+  "subject": "Computer Networks",
+  "subject_code": "3150710",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Reference Models",
+      "questions": [
+        "Draw the layered architecture of the OSI reference model and explain the functions/services provided by each layer."
+      ]
+    },
+    {
+      "category": "Routing Algorithms",
+      "questions": [
+        "Explain Distance Vector Routing and the Count-to-Infinity problem with a suitable example."
+      ]
+    },
+    {
+      "category": "Transport Layer",
+      "questions": [
+        "Differentiate between TCP and UDP. Explain the TCP Congestion Control mechanism (Slow Start, Congestion Avoidance)."
+      ]
+    },
+    {
+      "category": "Application Layer",
+      "questions": [
+        "What is DNS? Explain the hierarchical DNS system and how it resolves domain names into IP addresses."
+      ]
+    },
+    {
+      "category": "Error Control",
+      "questions": [
+        "Generate the CRC code word for a given bitstream (e.g., 10011101) using a standard generator polynomial."
+      ]
+    },
+    {
+      "category": "Network Layer addressing",
+      "questions": [
+        "What is subnetting? Explain how many subnets can be created for a given subnet mask and identify the IP address class."
+      ]
+    },
+    {
+      "category": "Medium Access Control",
+      "questions": [
+        "Explain the working of CSMA/CD and compare Pure ALOHA with Slotted ALOHA in terms of efficiency."
+      ]
+    },
+    {
+      "category": "HTTP Protocol",
+      "questions": [
+        "Differentiate between Persistent and Non-persistent HTTP connections with request-response behavior."
+      ]
+    },
+    {
+      "category": "Switching Techniques",
+      "questions": [
+        "Compare Circuit Switching and Packet Switching approaches for data transmission."
+      ]
+    }
+  ]
+}

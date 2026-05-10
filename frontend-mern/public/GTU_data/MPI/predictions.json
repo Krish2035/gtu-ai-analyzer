@@ -1,0 +1,22 @@
+{
+  "subject": "MPI",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "General Topics",
+      "questions": [
+        "What are the components of the 8085 flag register?",
+        "How is the Address/Data bus demultiplexed in the 8085?",
+        "What are the primary differences between Memory-mapped I/O and I/O-mapped I/O?",
+        "What are the hardware interrupts available in the 8085 microprocessor?",
+        "What is the function of the ALE pin in the 8085?",
+        "How do PUSH and POP instructions interact with the stack?",
+        "What are the different addressing modes in 8085?",
+        "What is the role of the 8255 Programmable Peripheral Interface?",
+        "How does 8086 architecture differ from 8085?",
+        "What is the purpose of the 8259A Programmable Interrupt Controller?"
+      ]
+    }
+  ]
+}

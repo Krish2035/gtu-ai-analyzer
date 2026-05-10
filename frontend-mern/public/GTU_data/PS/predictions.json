@@ -1,0 +1,22 @@
+{
+  "subject": "PS",
+  "subject_code": "",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Common Questions",
+      "questions": [
+        "Define and provide examples of Random Experiment and Sample Space.",
+        "What are independent events in probability?",
+        "State Bayes' Theorem.",
+        "What is a Random Variable and what are its types?",
+        "Define the Normal Distribution and its properties.",
+        "What is the difference between Null and Alternative Hypotheses?",
+        "Explain the terms 'Level of Significance' and 'Type I/Type II Errors'.",
+        "What is the Correlation Coefficient?",
+        "Define the Poisson Distribution.",
+        "What is Chebyshev's Inequality?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "subject": "DS",
+  "subject_code": "3130702",
+  "university": "Gujarat Technological University",
+  "faq_analysis": [
+    {
+      "category": "Fundamentals & Sorting",
+      "questions": [
+        "What is an Algorithm? Discuss the characteristics of a good algorithm.",
+        "Compare different Sorting techniques (Bubble, Selection, Insertion, Quick, Merge).",
+        "Explain Time and Space Complexity with examples.",
+        "Discuss the difference between Linear and Non-linear data structures."
+      ]
+    },
+    {
+      "category": "Linear Data Structures",
+      "questions": [
+        "Explain the Stack data structure and its operations (Push, Pop).",
+        "Describe the Queue data structure and its types (Circular, Priority, Double-ended).",
+        "Discuss the implementation of a Singly Linked List and its advantages over arrays.",
+        "How is a Doubly Linked List different from a Singly Linked List?"
+      ]
+    },
+    {
+      "category": "Non-Linear Data Structures",
+      "questions": [
+        "Define a Tree and explain different Tree Traversal methods (In-order, Pre-order, Post-order).",
+        "What is a Binary Search Tree (BST)? Explain the insertion and deletion processes.",
+        "Describe Graph representation techniques (Adjacency Matrix, Adjacency List).",
+        "Explain Breadth First Search (BFS) and Depth First Search (DFS) for graphs."
+      ]
+    },
+    {
+      "category": "Searching & Hashing",
+      "questions": [
+        "Compare Linear Search and Binary Search algorithms.",
+        "What is Hashing? Discuss different Collision Resolution techniques.",
+        "Explain the concept of an AVL Tree and its rotations."
+      ]
+    }
+  ]
+}
