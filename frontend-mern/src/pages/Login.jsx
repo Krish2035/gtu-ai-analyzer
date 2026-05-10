@@ -11,11 +11,15 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/auth/login', { email, password });
-      localStorage.setItem("lumina_token", res.data.access_token);
+      // DEMO MODE: Bypass real backend for Vercel
+      localStorage.setItem("lumina_token", "demo_token_123");
+      localStorage.setItem("lumina_user", JSON.stringify({
+        name: "Engineering Student",
+        email: email
+      }));
       navigate('/');
     } catch (err) {
-      alert(err.response?.data?.detail || "Invalid email or password");
+      alert("Invalid email or password");
     }
   };
 

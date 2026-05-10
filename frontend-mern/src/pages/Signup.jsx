@@ -19,11 +19,15 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/auth/signup', formData);
-      alert(res.data.message);
-      navigate('/login');
+      // DEMO MODE: Bypass real backend for Vercel
+      localStorage.setItem("lumina_token", "demo_token_123");
+      localStorage.setItem("lumina_user", JSON.stringify({
+        name: formData.name,
+        email: formData.email
+      }));
+      navigate('/');
     } catch (err) {
-      alert(err.response?.data?.detail || "An error occurred during signup");
+      alert("An error occurred during signup");
     }
   };
 

@@ -94,8 +94,14 @@ const GtuPredictor = () => {
           setStudyActivity(actRes.data.activities);
         }
       } catch (err) {
-        console.warn("Auth server offline. Using guest profile.");
-        setUser({ name: "Guest User", role: "Demo Access • Guest", profile_photo: null });
+        console.warn("Auth server offline. Using demo profile.");
+        const storedUser = localStorage.getItem("lumina_user");
+        if (storedUser) {
+          const parsed = JSON.parse(storedUser);
+          setUser({ name: parsed.name, role: "Demo Mode • Engineering", profile_photo: null });
+        } else {
+          setUser({ name: "Guest User", role: "Demo Access • Guest", profile_photo: null });
+        }
       }
     };
     fetchUserAndData();
