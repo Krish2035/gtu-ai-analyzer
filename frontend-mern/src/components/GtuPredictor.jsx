@@ -6,6 +6,7 @@ import mermaid from 'mermaid';
 import { X, Sparkles, Loader2, Search, ArrowRight, BrainCircuit, Bell, LogOut, BookOpen, Clock, Settings, LayoutDashboard, Brain, History as HistoryIcon, GraduationCap, ArrowUpRight, TrendingUp } from 'lucide-react';
 import { allSubjects } from '../data/subjectsData';
 import { aiShowcase } from '../data/aiShowcase';
+import { getAiExplanation } from '../utils/ai';
 
 // --- Helper: Mermaid Diagram Renderer ---
 const Mermaid = ({ chart }) => {
@@ -218,22 +219,25 @@ const GtuPredictor = () => {
     setIsAiLoading(true);
     setAiExplanation("");
 
-    // 1. Check for pre-generated showcase answer
+    // 1. Check for pre-generated showcase answer (FAST PATH)
     if (aiShowcase[topicName.trim()]) {
       setTimeout(() => {
         setAiExplanation(aiShowcase[topicName.trim()]);
         setIsAiLoading(false);
-      }, 800);
+      }, 500);
       return;
     }
 
+    // 2. Fallback to Direct Browser AI
     try {
-      const res = await axios.get(`/api/explain`, {
-        params: { topic: topicName, subject: selectedSubject.id }
-      });
-      setAiExplanation(res.data.explanation);
+      const explanation = await getAiExplanation(topicName, selectedSubject.name);
+      setAiExplanation(explanation);
     } catch (err) {
-      setAiExplanation(`### 🧠 Lumina AI Breakdown: ${topicName}\n\nLumina AI is currently analyzing this specific pattern based on GTU historical data. \n\n**Key Focus Areas:**\n*   Historical Frequency: High\n*   Conceptual Complexity: Medium\n*   Exam Weightage: 7 Marks\n\n*Note: To see the full dynamic explanation, please connect your AI backend server.*`);
+      if (err.message === "GROQ_API_KEY_MISSING") {
+        setAiExplanation(`### ⚠️ Setup Required\nTo enable AI for this topic, you need to add your **Groq API Key** to Vercel.\n\n1. Go to Vercel Dashboard > Settings > Environment Variables.\n2. Add \`VITE_GROQ_API_KEY\` with your key.\n3. Redeploy.`);
+      } else {
+        setAiExplanation(`### 🧠 Lumina AI Breakdown: ${topicName}\n\nLumina AI is currently experiencing high demand. Please try again in a few moments.`);
+      }
     } finally {
       setIsAiLoading(false);
     }
