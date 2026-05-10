@@ -1,0 +1,8 @@
+{
+  "name": "gtu-ai-analyzer-root",
+  "private": true,
+  "scripts": {
+    "build": "npm run build --prefix frontend-mern",
+    "install": "npm install --prefix frontend-mern"
+  }
+}
