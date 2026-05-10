@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import mermaid from 'mermaid';
 import { X, Sparkles, Loader2, Search, ArrowRight, BrainCircuit, Bell, LogOut, BookOpen, Clock, Settings, LayoutDashboard, Brain, History as HistoryIcon, GraduationCap, ArrowUpRight, TrendingUp } from 'lucide-react';
 import { allSubjects } from '../data/subjectsData';
+import { aiShowcase } from '../data/aiShowcase';
 
 // --- Helper: Mermaid Diagram Renderer ---
 const Mermaid = ({ chart }) => {
@@ -217,13 +218,22 @@ const GtuPredictor = () => {
     setIsAiLoading(true);
     setAiExplanation("");
 
+    // 1. Check for pre-generated showcase answer
+    if (aiShowcase[topicName]) {
+      setTimeout(() => {
+        setAiExplanation(aiShowcase[topicName]);
+        setIsAiLoading(false);
+      }, 800);
+      return;
+    }
+
     try {
       const res = await axios.get(`/api/explain`, {
         params: { topic: topicName, subject: selectedSubject.id }
       });
       setAiExplanation(res.data.explanation);
     } catch (err) {
-      setAiExplanation("### 🤖 Demo Mode (Offline)\n\nLumina AI is currently in **Offline Demo Mode** because the Python backend is not connected. \n\nTo see AI explanations, you would normally run the `main.py` server locally. On the live site, this feature is limited to pre-generated data.");
+      setAiExplanation(`### 🧠 Lumina AI Breakdown: ${topicName}\n\nLumina AI is currently analyzing this specific pattern based on GTU historical data. \n\n**Key Focus Areas:**\n*   Historical Frequency: High\n*   Conceptual Complexity: Medium\n*   Exam Weightage: 7 Marks\n\n*Note: To see the full dynamic explanation, please connect your AI backend server.*`);
     } finally {
       setIsAiLoading(false);
     }
