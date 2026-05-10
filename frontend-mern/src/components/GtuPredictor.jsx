@@ -70,7 +70,7 @@ const GtuPredictor = () => {
       try {
         const token = localStorage.getItem("lumina_token");
         if (token) {
-          const res = await axios.get("http://localhost:8000/api/users/me", {
+          const res = await axios.get("/api/users/me", {
             headers: { Authorization: `Bearer ${token}` }
           });
           setUser({
@@ -80,13 +80,13 @@ const GtuPredictor = () => {
           });
 
           // Fetch reminders
-          const remRes = await axios.get("http://localhost:8000/api/users/reminders", {
+          const remRes = await axios.get("/api/users/reminders", {
             headers: { Authorization: `Bearer ${token}` }
           });
           setReminders(remRes.data.reminders);
 
           // Fetch study activity
-          const actRes = await axios.get("http://localhost:8000/api/users/study-activity", {
+          const actRes = await axios.get("/api/users/study-activity", {
             headers: { Authorization: `Bearer ${token}` }
           });
           setStudyActivity(actRes.data.activities);
@@ -112,10 +112,10 @@ const GtuPredictor = () => {
 
     try {
       const token = localStorage.getItem("lumina_token");
-      await axios.post("http://localhost:8000/api/users/reminders", { title, date }, {
+      await axios.post("/api/users/reminders", { title, date }, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      const remRes = await axios.get("http://localhost:8000/api/users/reminders", {
+      const remRes = await axios.get("/api/users/reminders", {
         headers: { Authorization: `Bearer ${token}` }
       });
       setReminders(remRes.data.reminders);
@@ -127,10 +127,10 @@ const GtuPredictor = () => {
   const handleDeleteReminder = async (reminderId) => {
     try {
       const token = localStorage.getItem("lumina_token");
-      await axios.delete(`http://localhost:8000/api/users/reminders/${reminderId}`, {
+      await axios.delete(`/api/users/reminders/${reminderId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      const remRes = await axios.get("http://localhost:8000/api/users/reminders", {
+      const remRes = await axios.get("/api/users/reminders", {
         headers: { Authorization: `Bearer ${token}` }
       });
       setReminders(remRes.data.reminders);
@@ -145,7 +145,7 @@ const GtuPredictor = () => {
       const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       const today = days[new Date().getDay()];
       
-      await axios.post("http://localhost:8000/api/users/study-activity", {
+      await axios.post("/api/users/study-activity", {
         subject_name: subjectName,
         duration_minutes: 15,
         day_of_week: today
@@ -153,7 +153,7 @@ const GtuPredictor = () => {
         headers: { Authorization: `Bearer ${token}` }
       });
 
-      const actRes = await axios.get("http://localhost:8000/api/users/study-activity", {
+      const actRes = await axios.get("/api/users/study-activity", {
         headers: { Authorization: `Bearer ${token}` }
       });
       setStudyActivity(actRes.data.activities);
@@ -218,7 +218,7 @@ const GtuPredictor = () => {
     setAiExplanation("");
 
     try {
-      const res = await axios.get(`http://localhost:8000/api/explain`, {
+      const res = await axios.get(`/api/explain`, {
         params: { topic: topicName, subject: selectedSubject.id }
       });
       setAiExplanation(res.data.explanation);

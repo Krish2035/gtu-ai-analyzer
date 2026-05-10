@@ -18,7 +18,7 @@ const Settings = () => {
       try {
         const token = localStorage.getItem("lumina_token");
         if (token) {
-          const res = await axios.get("http://localhost:8000/api/users/me", {
+          const res = await axios.get("/api/users/me", {
             headers: { Authorization: `Bearer ${token}` }
           });
           setUser(res.data);
@@ -36,7 +36,7 @@ const Settings = () => {
       formData.append("file", e.target.files[0]);
       try {
         const token = localStorage.getItem("lumina_token");
-        const res = await axios.post("http://localhost:8000/api/users/upload_avatar", formData, {
+        const res = await axios.post("/api/users/upload_avatar", formData, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "multipart/form-data"
@@ -55,7 +55,7 @@ const Settings = () => {
     if (newName && newName !== user.name) {
       try {
         const token = localStorage.getItem("lumina_token");
-        const res = await axios.put("http://localhost:8000/api/users/profile", { name: newName }, {
+        const res = await axios.put("/api/users/profile", { name: newName }, {
           headers: { Authorization: `Bearer ${token}` }
         });
         alert(res.data.message);
@@ -73,7 +73,7 @@ const Settings = () => {
       if (newPass) {
         try {
           const token = localStorage.getItem("lumina_token");
-          const res = await axios.put("http://localhost:8000/api/users/password", { 
+          const res = await axios.put("/api/users/password", { 
             old_password: oldPass, 
             new_password: newPass 
           }, {

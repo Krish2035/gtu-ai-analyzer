@@ -17,7 +17,7 @@ const MainLayout = ({ children }) => {
       try {
         const token = localStorage.getItem("lumina_token");
         if (token) {
-          const res = await axios.get("http://localhost:8000/api/users/me", {
+          const res = await axios.get("/api/users/me", {
             headers: { Authorization: `Bearer ${token}` }
           });
           setUser({

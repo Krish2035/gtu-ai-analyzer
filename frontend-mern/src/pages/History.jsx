@@ -67,7 +67,7 @@ const History = () => {
     setAiExplanation("");
 
     try {
-      const res = await axios.get(`http://localhost:8000/api/explain`, {
+      const res = await axios.get(`/api/explain`, {
         params: { topic: topicName, subject: subjectId || "CS701" }
       });
       setAiExplanation(res.data.explanation);

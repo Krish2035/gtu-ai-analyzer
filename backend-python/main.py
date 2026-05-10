@@ -16,8 +16,10 @@ from fastapi import Depends, status, File, UploadFile
 from fastapi.security import OAuth2PasswordBearer
 from database import get_db_connection
 from auth import get_password_hash, verify_password, create_access_token, verify_token
+from mangum import Mangum
 
 app = FastAPI()
+handler = Mangum(app)
 
 # --- 1. CONFIGURATION ---
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")

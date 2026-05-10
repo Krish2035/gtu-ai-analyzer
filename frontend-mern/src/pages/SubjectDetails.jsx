@@ -180,7 +180,7 @@ const SubjectDetails = () => {
     setAiExplanation("");
 
     try {
-      const res = await axios.get(`http://localhost:8000/api/explain`, {
+      const res = await axios.get(`/api/explain`, {
         params: { topic: topicName, subject: subject.id }
       });
       setAiExplanation(res.data.explanation);
