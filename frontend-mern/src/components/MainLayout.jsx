@@ -4,7 +4,7 @@ import {
   BrainCircuit, Search, Bell, User, ChevronRight, LogOut
 } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import apiClient from '../utils/apiClient';
 
 const MainLayout = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -17,7 +17,7 @@ const MainLayout = ({ children }) => {
       try {
         const token = localStorage.getItem("lumina_token");
         if (token && token !== "demo_token_123") {
-          const res = await axios.get("/api/users/me", {
+          const res = await apiClient.get("/api/users/me", {
             headers: { Authorization: `Bearer ${token}` }
           });
           if (res.data && typeof res.data === 'object' && res.data.name) {

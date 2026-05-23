@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+import apiClient from '../utils/apiClient';
 import { BrainCircuit, Mail, Lock, ArrowRight, Sparkles } from 'lucide-react';
 
 const Login = () => {
@@ -11,14 +11,14 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/auth/login", {
+      const res = await apiClient.post("/api/auth/login", {
         email,
         password
       });
       
       localStorage.setItem("lumina_token", res.data.access_token);
       
-      const userRes = await axios.get("/api/users/me", {
+      const userRes = await apiClient.get("/api/users/me", {
         headers: { Authorization: `Bearer ${res.data.access_token}` }
       });
       

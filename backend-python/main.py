@@ -60,9 +60,19 @@ SYSTEM_PROMPT = (
 )
 
 # --- 2. ENABLE CORS ---
+ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://localhost:3000",
+    "https://gtu-ai-analyzer-frontend.vercel.app",
+]
+# Also allow any Vercel preview deploy URLs
+ALLOWED_ORIGIN_REGEX = r"https://gtu-ai-analyzer.*\.vercel\.app"
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Allows your React app on 5173 to talk to this server
+    allow_origins=ALLOWED_ORIGINS,
+    allow_origin_regex=ALLOWED_ORIGIN_REGEX,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

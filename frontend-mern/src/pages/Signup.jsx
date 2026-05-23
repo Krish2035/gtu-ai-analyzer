@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+import apiClient from '../utils/apiClient';
 import { BrainCircuit, Mail, Lock, User, Hash, ArrowRight, Sparkles } from 'lucide-react';
 
 const Signup = () => {
@@ -19,14 +19,14 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/auth/signup", {
+      await apiClient.post("/api/auth/signup", {
         name: formData.name,
         enrollment: formData.enrollment,
         email: formData.email,
         password: formData.password
       });
       
-      const loginRes = await axios.post("/api/auth/login", {
+      const loginRes = await apiClient.post("/api/auth/login", {
         email: formData.email,
         password: formData.password
       });

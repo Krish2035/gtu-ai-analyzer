@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import apiClient from '../utils/apiClient';
 import ReactMarkdown from 'react-markdown'; 
 import mermaid from 'mermaid';
 import { X, Sparkles, Loader2, Search, ArrowRight, BrainCircuit, Bell, LogOut, BookOpen, Clock, Settings, LayoutDashboard, Brain, History as HistoryIcon, GraduationCap, ArrowUpRight, TrendingUp, AlertCircle } from 'lucide-react';
@@ -110,7 +111,7 @@ const GtuPredictor = () => {
       try {
         const token = localStorage.getItem("lumina_token");
         if (token && token !== "demo_token_123") {
-          const res = await axios.get("/api/users/me", {
+          const res = await apiClient.get("/api/users/me", {
             headers: { Authorization: `Bearer ${token}` }
           });
           
@@ -125,13 +126,13 @@ const GtuPredictor = () => {
           });
 
           // Fetch reminders
-          const remRes = await axios.get("/api/users/reminders", {
+          const remRes = await apiClient.get("/api/users/reminders", {
             headers: { Authorization: `Bearer ${token}` }
           });
           setReminders(remRes.data?.reminders || []);
 
           // Fetch study activity
-          const actRes = await axios.get("/api/users/study-activity", {
+          const actRes = await apiClient.get("/api/users/study-activity", {
             headers: { Authorization: `Bearer ${token}` }
           });
           setStudyActivity(actRes.data?.activities || []);
@@ -165,10 +166,10 @@ const GtuPredictor = () => {
 
     try {
       const token = localStorage.getItem("lumina_token");
-      await axios.post("/api/users/reminders", { title, date }, {
+      await apiClient.post("/api/users/reminders", { title, date }, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      const remRes = await axios.get("/api/users/reminders", {
+      const remRes = await apiClient.get("/api/users/reminders", {
         headers: { Authorization: `Bearer ${token}` }
       });
       setReminders(remRes.data.reminders);
@@ -180,10 +181,10 @@ const GtuPredictor = () => {
   const handleDeleteReminder = async (reminderId) => {
     try {
       const token = localStorage.getItem("lumina_token");
-      await axios.delete(`/api/users/reminders/${reminderId}`, {
+      await apiClient.delete(`/api/users/reminders/${reminderId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      const remRes = await axios.get("/api/users/reminders", {
+      const remRes = await apiClient.get("/api/users/reminders", {
         headers: { Authorization: `Bearer ${token}` }
       });
       setReminders(remRes.data.reminders);
@@ -195,10 +196,11 @@ const GtuPredictor = () => {
   const logStudyActivity = async (subjectName) => {
     try {
       const token = localStorage.getItem("lumina_token");
+      if (!token || token === "demo_token_123") return; // skip in demo mode
       const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       const today = days[new Date().getDay()];
       
-      await axios.post("/api/users/study-activity", {
+      await apiClient.post("/api/users/study-activity", {
         subject_name: subjectName,
         duration_minutes: 15,
         day_of_week: today
@@ -206,7 +208,7 @@ const GtuPredictor = () => {
         headers: { Authorization: `Bearer ${token}` }
       });
 
-      const actRes = await axios.get("/api/users/study-activity", {
+      const actRes = await apiClient.get("/api/users/study-activity", {
         headers: { Authorization: `Bearer ${token}` }
       });
       setStudyActivity(actRes.data.activities);

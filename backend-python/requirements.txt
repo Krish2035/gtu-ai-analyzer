@@ -1,7 +1,9 @@
 python-dotenv
 fastapi
-uvicorn
+uvicorn[standard]
 groq
 pydantic
-sqlite3
 mangum
+bcrypt
+PyJWT
+python-multipart

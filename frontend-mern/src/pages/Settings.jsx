@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
-import axios from 'axios';
-import { User, Bell, Shield, Smartphone, ChevronRight, Sparkles, LogOut, Camera } from 'lucide-react';
+import apiClient from '../utils/apiClient';
+import { User, Bell, Shield, Smartphone, ChevronRight, Sparkles, LogOut, Camera, AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Settings = () => {
@@ -18,7 +18,7 @@ const Settings = () => {
       try {
         const token = localStorage.getItem("lumina_token");
         if (token && token !== "demo_token_123") {
-          const res = await axios.get("/api/users/me", {
+          const res = await apiClient.get("/api/users/me", {
             headers: { Authorization: `Bearer ${token}` }
           });
           if (res.data && typeof res.data === 'object' && res.data.name) {
@@ -37,13 +37,19 @@ const Settings = () => {
     fetchUser();
   }, []);
 
+  const isDemo = () => {
+    const token = localStorage.getItem("lumina_token");
+    return !token || token === "demo_token_123";
+  };
+
   const handleAvatarChange = async (e) => {
+    if (isDemo()) { alert("Avatar upload requires a real account. Please sign up!"); return; }
     if (e.target.files && e.target.files[0]) {
       const formData = new FormData();
       formData.append("file", e.target.files[0]);
       try {
         const token = localStorage.getItem("lumina_token");
-        const res = await axios.post("/api/users/upload_avatar", formData, {
+        const res = await apiClient.post("/api/users/upload_avatar", formData, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "multipart/form-data"
@@ -58,11 +64,12 @@ const Settings = () => {
   };
 
   const handleEditProfile = async () => {
+    if (isDemo()) { alert("Profile editing requires a real account. Please sign up!"); return; }
     const newName = prompt("Enter new full name:", user.name);
     if (newName && newName !== user.name) {
       try {
         const token = localStorage.getItem("lumina_token");
-        const res = await axios.put("/api/users/profile", { name: newName }, {
+        const res = await apiClient.put("/api/users/profile", { name: newName }, {
           headers: { Authorization: `Bearer ${token}` }
         });
         alert(res.data.message);
@@ -74,13 +81,14 @@ const Settings = () => {
   };
 
   const handleChangePassword = async () => {
+    if (isDemo()) { alert("Password change requires a real account. Please sign up!"); return; }
     const oldPass = prompt("Enter current password:");
     if (oldPass) {
       const newPass = prompt("Enter new password:");
       if (newPass) {
         try {
           const token = localStorage.getItem("lumina_token");
-          const res = await axios.put("/api/users/password", { 
+          const res = await apiClient.put("/api/users/password", { 
             old_password: oldPass, 
             new_password: newPass 
           }, {

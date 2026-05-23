@@ -1,9 +1,10 @@
 import bcrypt
 import jwt
+import os
 from datetime import datetime, timedelta
 
-# Secret key for JWT (In production, load this from environment variables)
-SECRET_KEY = "lumina_super_secret_gtu_key_2026"
+# Secret key for JWT — set JWT_SECRET in Vercel environment variables
+SECRET_KEY = os.getenv("JWT_SECRET", "lumina-secret-key-2026")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 days
 
