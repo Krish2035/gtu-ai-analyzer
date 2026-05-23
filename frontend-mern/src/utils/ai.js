@@ -5,7 +5,8 @@
 export const getAiExplanation = async (topic, subject) => {
   try {
     // 1. Try to fetch explanation from the backend API first
-    const backendRes = await fetch(`/api/explain?topic=${encodeURIComponent(topic)}&subject=${encodeURIComponent(subject)}`);
+    const baseUrl = import.meta.env.PROD ? "https://gtu-ai-analyzer-backend.vercel.app" : "";
+    const backendRes = await fetch(`${baseUrl}/api/explain?topic=${encodeURIComponent(topic)}&subject=${encodeURIComponent(subject)}`);
     if (backendRes.ok) {
       const data = await backendRes.json();
       if (data && data.explanation) {

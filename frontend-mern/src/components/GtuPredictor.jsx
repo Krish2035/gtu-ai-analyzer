@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown'; 
 import mermaid from 'mermaid';
-import { X, Sparkles, Loader2, Search, ArrowRight, BrainCircuit, Bell, LogOut, BookOpen, Clock, Settings, LayoutDashboard, Brain, History as HistoryIcon, GraduationCap, ArrowUpRight, TrendingUp } from 'lucide-react';
+import { X, Sparkles, Loader2, Search, ArrowRight, BrainCircuit, Bell, LogOut, BookOpen, Clock, Settings, LayoutDashboard, Brain, History as HistoryIcon, GraduationCap, ArrowUpRight, TrendingUp, AlertCircle } from 'lucide-react';
 import { allSubjects } from '../data/subjectsData';
 import { aiShowcase } from '../data/aiShowcase';
 import { getAiExplanation } from '../utils/ai';
@@ -11,6 +11,7 @@ import { getAiExplanation } from '../utils/ai';
 // --- Helper: Mermaid Diagram Renderer ---
 const Mermaid = ({ chart }) => {
   const ref = useRef(null);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     mermaid.initialize({ startOnLoad: true, theme: 'default' });
@@ -18,26 +19,63 @@ const Mermaid = ({ chart }) => {
 
   useEffect(() => {
     if (ref.current && chart) {
-      // Clean up the chart string (AI sometimes adds extra "mermaid" tags)
-      const cleanChart = chart
+      let cleanChart = chart
         .replace(/^mermaid\n/, '')
         .replace(/^mermaid\s/, '')
         .replace(/\|>\s/g, '| ') // Fix AI hallucination: |label|>
         .replace(/\|>/g, '|')    // Fix AI hallucination: |label|>
         .trim();
 
+      // Fix nested parentheses which crash Mermaid (e.g. A(Layer 7 (Application)))
+      const nestedParenthesesRegex = /(\w+)\(([^)]*\([^)]*\)[^)]*)\)/g;
+      cleanChart = cleanChart.replace(nestedParenthesesRegex, '$1["$2"]');
+
+      // Wrap labels with slashes or other special chars in quotes
+      const specialCharsInBrackets = /(\w+)\[([^"\]]+)\]/g;
+      cleanChart = cleanChart.replace(specialCharsInBrackets, (match, id, text) => {
+        if (/[\/\\,;:()]/g.test(text)) {
+          return `${id}["${text.trim()}"]`;
+        }
+        return match;
+      });
+
+      const specialCharsInParens = /(\w+)\(([^"\/)]+)\)/g;
+      cleanChart = cleanChart.replace(specialCharsInParens, (match, id, text) => {
+        if (/[\/\\,;:]/g.test(text)) {
+          return `${id}["${text.trim()}"]`;
+        }
+        return match;
+      });
+
+      // Remove trailing semicolons
+      cleanChart = cleanChart.split('\n').map(line => line.trim().replace(/;$/, '')).join('\n');
+
       const renderDiagram = async () => {
         try {
+          setHasError(false);
           ref.current.removeAttribute('data-processed');
-          ref.current.innerHTML = cleanChart; // Set content manually before run
+          ref.current.innerHTML = cleanChart;
+          
+          await mermaid.parse(cleanChart);
           await mermaid.run({ nodes: [ref.current] });
         } catch (err) {
           console.error("Mermaid error:", err);
+          setHasError(true);
         }
       };
       renderDiagram();
     }
   }, [chart]);
+
+  if (hasError) {
+    return (
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 text-center my-6 flex flex-col items-center justify-center">
+        <AlertCircle className="text-amber-500 mb-2" size={28} />
+        <p className="text-sm font-bold text-slate-700">Diagram rendering unavailable</p>
+        <p className="text-xs text-slate-400 mt-1">Lumina is auto-fixing this diagram's syntax...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="mermaid bg-white p-4 rounded-xl border border-slate-100 my-6 shadow-sm overflow-x-auto flex justify-center" ref={ref}>
