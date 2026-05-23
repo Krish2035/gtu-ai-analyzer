@@ -71,10 +71,15 @@ const GtuPredictor = () => {
     const fetchUserAndData = async () => {
       try {
         const token = localStorage.getItem("lumina_token");
-        if (token) {
+        if (token && token !== "demo_token_123") {
           const res = await axios.get("/api/users/me", {
             headers: { Authorization: `Bearer ${token}` }
           });
+          
+          if (!res.data || typeof res.data !== 'object' || !res.data.name) {
+            throw new Error("Invalid user response");
+          }
+          
           setUser({
             name: res.data.name,
             role: "BE Student • Semester 7",
@@ -85,13 +90,15 @@ const GtuPredictor = () => {
           const remRes = await axios.get("/api/users/reminders", {
             headers: { Authorization: `Bearer ${token}` }
           });
-          setReminders(remRes.data.reminders);
+          setReminders(remRes.data?.reminders || []);
 
           // Fetch study activity
           const actRes = await axios.get("/api/users/study-activity", {
             headers: { Authorization: `Bearer ${token}` }
           });
-          setStudyActivity(actRes.data.activities);
+          setStudyActivity(actRes.data?.activities || []);
+        } else {
+          throw new Error("Demo Mode active");
         }
       } catch (err) {
         console.warn("Auth server offline. Using demo profile.");
@@ -261,7 +268,7 @@ const GtuPredictor = () => {
            <div className="bg-[#fff0f0] rounded-[3rem] p-12 flex flex-col md:flex-row items-center justify-between relative overflow-hidden group">
               <div className="relative z-10 max-w-md">
                  <h2 className="text-4xl font-black text-slate-800 tracking-tight leading-tight mb-4">
-                    Welcome back, <span className="text-red-400">{user.name.split(' ')[0]}!</span>
+                    Welcome back, <span className="text-red-400">{(user?.name || "").split(' ')[0]}!</span>
                  </h2>
                  <p className="text-slate-600 font-medium mb-8">
                     You've analyzed <span className="font-black text-slate-800">80%</span> of your goal this week! Keep it up and improve your results!
@@ -406,7 +413,7 @@ const GtuPredictor = () => {
               </div>
               <div className="relative w-32 h-32 mx-auto mb-6">
                  <div className="w-full h-full rounded-full border-4 border-slate-50 overflow-hidden shadow-inner flex items-center justify-center bg-slate-100">
-                    <img src={user.profile_photo || `https://ui-avatars.com/api/?name=${user.name.replace(' ', '+')}&background=0D8ABC&color=fff`} alt="User" className="w-full h-full object-cover" />
+                    <img src={user.profile_photo || `https://ui-avatars.com/api/?name=${(user?.name || "").replace(' ', '+')}&background=0D8ABC&color=fff`} alt="User" className="w-full h-full object-cover" />
                  </div>
                  <div className="absolute bottom-0 right-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center border-4 border-white">
                     <Sparkles size={14} />

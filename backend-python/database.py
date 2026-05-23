@@ -1,15 +1,36 @@
 import sqlite3
 import os
 
-DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "lumina.db")
+import shutil
+
+# In Vercel, the filesystem is read-only. Use /tmp/lumina.db for writable SQLite db
+if os.environ.get("VERCEL"):
+    DB_PATH = "/tmp/lumina.db"
+else:
+    DB_PATH = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "lumina.db"))
 
 def get_db_connection():
+    # If in Vercel and db not copied yet
+    if os.environ.get("VERCEL") and not os.path.exists(DB_PATH):
+        src_db = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "lumina.db"))
+        if os.path.exists(src_db):
+            try:
+                shutil.copy2(src_db, DB_PATH)
+                print(f"Copied base database to: {DB_PATH}")
+            except Exception as e:
+                print(f"Error copying database: {e}")
+        else:
+            print("Base database not found in source. Creating fresh in /tmp.")
+        
+        # Initialize database to make sure tables exist
+        init_db()
+        
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row  # This enables column access by name: row['name']
     return conn
 
 def init_db():
-    conn = get_db_connection()
+    conn = sqlite3.connect(DB_PATH)
     try:
         conn.execute('''
             CREATE TABLE IF NOT EXISTS users (

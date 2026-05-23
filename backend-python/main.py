@@ -29,7 +29,11 @@ if not GROQ_API_KEY:
 client = Groq(api_key=GROQ_API_KEY)
 
 # Local caching folder to save your API quota
-CACHE_DIR = "ai_cache"
+if os.environ.get("VERCEL"):
+    CACHE_DIR = "/tmp/ai_cache"
+else:
+    CACHE_DIR = "ai_cache"
+
 if not os.path.exists(CACHE_DIR):
     os.makedirs(CACHE_DIR)
 
@@ -219,7 +223,11 @@ def add_study_activity(data: StudyActivityData, current_user: dict = Depends(get
     conn.close()
     return {"message": "Activity logged"}
 
-UPLOAD_DIR = "uploads"
+if os.environ.get("VERCEL"):
+    UPLOAD_DIR = "/tmp/uploads"
+else:
+    UPLOAD_DIR = "uploads"
+
 if not os.path.exists(UPLOAD_DIR):
     os.makedirs(UPLOAD_DIR)
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
@@ -233,10 +241,10 @@ async def upload_avatar(file: UploadFile = File(...), current_user: dict = Depen
         shutil.copyfileobj(file.file, buffer)
     
     conn = get_db_connection()
-    conn.execute('UPDATE users SET profile_photo = ? WHERE id = ?', (f"http://localhost:8000/uploads/{filename}", current_user['id']))
+    conn.execute('UPDATE users SET profile_photo = ? WHERE id = ?', (f"/uploads/{filename}", current_user['id']))
     conn.commit()
     conn.close()
-    return {"message": "Avatar uploaded", "profile_photo": f"http://localhost:8000/uploads/{filename}"}
+    return {"message": "Avatar uploaded", "profile_photo": f"/uploads/{filename}"}
 
 # --- 4. AI ENDPOINT WITH CACHING ---
 @app.get("/api/explain")

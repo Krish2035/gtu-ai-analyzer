@@ -19,15 +19,38 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      // DEMO MODE: Bypass real backend for Vercel
+      await axios.post("/api/auth/signup", {
+        name: formData.name,
+        enrollment: formData.enrollment,
+        email: formData.email,
+        password: formData.password
+      });
+      
+      const loginRes = await axios.post("/api/auth/login", {
+        email: formData.email,
+        password: formData.password
+      });
+      
+      localStorage.setItem("lumina_token", loginRes.data.access_token);
+      localStorage.setItem("lumina_user", JSON.stringify({
+        name: formData.name,
+        email: formData.email
+      }));
+      
+      navigate('/');
+    } catch (err) {
+      if (err.response && err.response.data && err.response.data.detail) {
+        alert(err.response.data.detail);
+        return;
+      }
+      
+      console.warn("Real auth server unreachable. Falling back to Demo Mode.");
       localStorage.setItem("lumina_token", "demo_token_123");
       localStorage.setItem("lumina_user", JSON.stringify({
         name: formData.name,
         email: formData.email
       }));
       navigate('/');
-    } catch (err) {
-      alert("An error occurred during signup");
     }
   };
 

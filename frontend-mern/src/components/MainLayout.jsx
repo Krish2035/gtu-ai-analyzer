@@ -16,15 +16,27 @@ const MainLayout = ({ children }) => {
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem("lumina_token");
-        if (token) {
+        if (token && token !== "demo_token_123") {
           const res = await axios.get("/api/users/me", {
             headers: { Authorization: `Bearer ${token}` }
           });
-          setUser({
-            name: res.data.name,
-            role: "Engineering Student",
-            profile_photo: res.data.profile_photo
-          });
+          if (res.data && typeof res.data === 'object' && res.data.name) {
+            setUser({
+              name: res.data.name,
+              role: "Engineering Student",
+              profile_photo: res.data.profile_photo
+            });
+          }
+        } else {
+          const storedUser = localStorage.getItem("lumina_user");
+          if (storedUser) {
+            const parsed = JSON.parse(storedUser);
+            setUser({
+              name: parsed.name,
+              role: "Demo Student",
+              profile_photo: null
+            });
+          }
         }
       } catch (err) {
         console.error("Failed to load user in header", err);
@@ -122,7 +134,7 @@ const MainLayout = ({ children }) => {
                   <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{user.role}</p>
                 </div>
                 <div className="w-10 h-10 bg-slate-200 rounded-full border-2 border-white shadow-sm overflow-hidden flex items-center justify-center">
-                  <img src={user.profile_photo || `https://ui-avatars.com/api/?name=${user.name.replace(' ', '+')}&background=0D8ABC&color=fff`} alt="Avatar" className="w-full h-full object-cover" />
+                  <img src={user.profile_photo || `https://ui-avatars.com/api/?name=${(user?.name || "").replace(' ', '+')}&background=0D8ABC&color=fff`} alt="Avatar" className="w-full h-full object-cover" />
                 </div>
               </Link>
               <button onClick={handleLogout} className="p-2 text-slate-400 hover:text-red-500 transition-colors">

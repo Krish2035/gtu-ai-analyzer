@@ -11,15 +11,36 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      // DEMO MODE: Bypass real backend for Vercel
+      const res = await axios.post("/api/auth/login", {
+        email,
+        password
+      });
+      
+      localStorage.setItem("lumina_token", res.data.access_token);
+      
+      const userRes = await axios.get("/api/users/me", {
+        headers: { Authorization: `Bearer ${res.data.access_token}` }
+      });
+      
+      localStorage.setItem("lumina_user", JSON.stringify({
+        name: userRes.data.name,
+        email: userRes.data.email
+      }));
+      
+      navigate('/');
+    } catch (err) {
+      if (err.response && err.response.status === 401) {
+        alert("Invalid email or password");
+        return;
+      }
+      
+      console.warn("Real auth server unreachable. Falling back to Demo Mode.");
       localStorage.setItem("lumina_token", "demo_token_123");
       localStorage.setItem("lumina_user", JSON.stringify({
-        name: "Engineering Student",
+        name: "Demo Student",
         email: email
       }));
       navigate('/');
-    } catch (err) {
-      alert("Invalid email or password");
     }
   };
 

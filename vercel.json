@@ -15,7 +15,11 @@
   ],
   "rewrites": [
     {
-      "source": "/api/(.*)",
+      "source": "/api(.*)",
+      "destination": "backend-python/main.py"
+    },
+    {
+      "source": "/uploads(.*)",
       "destination": "backend-python/main.py"
     },
     {

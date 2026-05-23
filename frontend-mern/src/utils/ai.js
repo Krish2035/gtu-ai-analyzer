@@ -3,6 +3,20 @@
  * NOTE: Requires VITE_GROQ_API_KEY to be set in Vercel/Env.
  */
 export const getAiExplanation = async (topic, subject) => {
+  try {
+    // 1. Try to fetch explanation from the backend API first
+    const backendRes = await fetch(`/api/explain?topic=${encodeURIComponent(topic)}&subject=${encodeURIComponent(subject)}`);
+    if (backendRes.ok) {
+      const data = await backendRes.json();
+      if (data && data.explanation) {
+        return data.explanation;
+      }
+    }
+  } catch (err) {
+    console.warn("Backend explain endpoint unreachable or failed. Falling back to browser-side API.", err);
+  }
+
+  // 2. Browser-side fallback (requires VITE_GROQ_API_KEY to be set in Vercel/Env)
   const apiKey = import.meta.env.VITE_GROQ_API_KEY;
 
   if (!apiKey) {

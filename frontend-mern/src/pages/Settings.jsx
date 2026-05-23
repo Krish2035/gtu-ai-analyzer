@@ -17,11 +17,18 @@ const Settings = () => {
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem("lumina_token");
-        if (token) {
+        if (token && token !== "demo_token_123") {
           const res = await axios.get("/api/users/me", {
             headers: { Authorization: `Bearer ${token}` }
           });
-          setUser(res.data);
+          if (res.data && typeof res.data === 'object' && res.data.name) {
+            setUser(res.data);
+          }
+        } else {
+          const storedUser = localStorage.getItem("lumina_user");
+          if (storedUser) {
+            setUser(JSON.parse(storedUser));
+          }
         }
       } catch (err) {
         console.error("Failed to load user", err);
