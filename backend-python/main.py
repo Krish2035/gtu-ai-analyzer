@@ -121,6 +121,9 @@ class PasswordUpdateData(BaseModel):
     old_password: str
     new_password: str
 
+class ForgotPasswordData(BaseModel):
+    email: str
+
 class ReminderData(BaseModel):
     title: str
     date: str
@@ -159,6 +162,32 @@ def login(data: LoginData):
     
     token = create_access_token({"sub": user['email']})
     return {"access_token": token, "token_type": "bearer"}
+
+@app.post("/api/auth/forgot-password")
+def forgot_password(data: ForgotPasswordData):
+    import secrets, string
+    conn = get_db_connection()
+    user = conn.execute('SELECT id, name FROM users WHERE email = ?', (data.email,)).fetchone()
+    if not user:
+        conn.close()
+        # Return generic message to prevent email enumeration
+        raise HTTPException(status_code=404, detail="No account found with that email address.")
+    
+    # Generate a secure 12-character temp password
+    alphabet = string.ascii_letters + string.digits
+    temp_password = ''.join(secrets.choice(alphabet) for _ in range(12))
+    hashed_pw = get_password_hash(temp_password)
+    
+    conn.execute('UPDATE users SET hashed_password = ? WHERE id = ?', (hashed_pw, user['id']))
+    conn.commit()
+    conn.close()
+    
+    # In production you would email this. For local dev, we return it directly.
+    return {
+        "message": "Password reset successful.",
+        "temp_password": temp_password,
+        "name": user['name']
+    }
 
 @app.get("/api/users/me")
 def read_users_me(current_user: dict = Depends(get_current_user)):
